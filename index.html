@@ -8,17 +8,22 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <header>
+    </header>
         <div class="card">
-            <h1>HASIL SELEKSI IRMAN 2025</h1>
+            <div class="header-card">
+                <img src="LOGO IRMAN PDF_page-0001.jpg" alt="LOGO IRMAN" class="logo">
+                <h1>HASIL SELEKSI IRMAN 2025</h1>
+            </div>
             <div class="form-group">
-                <label for="nisn">Nomor HP</label>
-                <input type="text" id="nisn" placeholder="Nomor HP saat pendaftaran (08xxxxxxxxxx)">
+                <label for="nisn">Nomor Registrasi Irman</label>
+                <input type="text" id="nisn" maxlength="10" placeholder="Nomor Registrasi Irman yang dibagikan" oninput="autoNext(this, 'tanggal')" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
             <div class="form-group">
                 <label for="tanggal">Tanggal Lahir</label>
-                <input type="text" id="tanggal" placeholder="dd-mm-yyyy">
+                <input type="date" id="tanggal" onkeydown="cekEnter(event, 'submit')">
             </div>
-            <button onclick="cekHasil()">Lihat Hasil</button>
+            <button id="submit" onclick="cekHasil()">Lihat Hasil</button>
             <div id="hasil" class="result" style="display:none;"></div>
         </div>
 </body>

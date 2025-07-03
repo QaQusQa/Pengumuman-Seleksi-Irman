@@ -8,7 +8,9 @@
 }
 
 body {
-    background-color: #2374c5;
+    background-image: url(IMG_4444\ \(1\).png);
+    background-size: 50%;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,30 +24,32 @@ header {
     margin-bottom: 30px;
     
 }
-header h1 {
-    font-size: 3.8rem;
-    margin-top: 10px;
-    color: #333;
+header img {
+    width: 100px;
+    height: auto;
+}
+.logo {
+    width: 50px;
+    height: 50px;
 }
 .card {
     background: white;
     border-radius: 8px;
     padding: 30px;
-    max-width: 500px;
-    width: 100%;
+    width: 750px;
+    height: 500px;
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
     justify-self: center;
-    
 }
 .form-group {
     margin-bottom: 20px;
 }
 label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
-input[type="text"] {
+input[type="text"], [type="date"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
