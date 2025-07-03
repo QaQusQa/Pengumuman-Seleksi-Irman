@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Seleksi IRMAN 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f9f9f9 0%, #e5ecf5 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      background-color: #002147;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    .header img {
+      width: 70px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      margin-top: -30px;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .container h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .lulus {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .tidak-lulus {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://snpmb.bppp.kemdikbud.go.id/assets/img/logo-snpmb-color.png" alt="Logo IRMAN">
+    <h1>Pengumuman Hasil Seleksi IRMAN 2025</h1>
+  </div>
+
+  <div class="container">
+    <h2>Masukkan Data Anda</h2>
+    <div class="form-group">
+      <label for="nisn">NISN</label>
+      <input type="text" id="nisn" placeholder="Contoh: 1234567890">
+    </div>
+    <div class="form-group">
+      <label for="tgl">Tanggal Lahir</label>
+      <input type="text" id="tgl" placeholder="dd-mm-yyyy">
+    </div>
+    <button onclick="cekHasil()">Cek Hasil Seleksi</button>
+    <div id="hasil" class="result" style="display:none;"></div>
+  </div>
+
+  <script>
+    const data = [
+      { nisn: '1234567890', tgl: '01-01-2007', nama: 'Andi Saputra', status: 'LULUS' },
+      { nisn: '0987654321', tgl: '15-04-2006', nama: 'Siti Aminah', status: 'TIDAK LULUS' },
+    ];
+
+    function cekHasil() {
+      const nisn = document.getElementById('nisn').value.trim();
+      const tgl = document.getElementById('tgl').value.trim();
+      const hasilDiv = document.getElementById('hasil');
+
+      const peserta = data.find(item => item.nisn === nisn && item.tgl === tgl);
+
+      if (peserta) {
+        hasilDiv.innerHTML = `${peserta.nama}<br><br>DINYATAKAN<br><br>${peserta.status}`;
+        hasilDiv.className = `result ${peserta.status === 'LULUS' ? 'lulus' : 'tidak-lulus'}`;
+        hasilDiv.style.display = 'block';
+      } else {
+        hasilDiv.innerHTML = `Data tidak ditemukan. Silakan periksa kembali.`;
+        hasilDiv.className = 'result tidak-lulus';
+        hasilDiv.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
