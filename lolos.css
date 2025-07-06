@@ -20,6 +20,8 @@ body {
     width: 90%;
     margin: 0;
     overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .header-content {
     background: linear-gradient(to right, #d2c984, #cfcc84, #d6d3bf);
@@ -31,6 +33,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .ucapan {
     color: #fff;
@@ -38,6 +42,8 @@ body {
     text-align: left;
     margin-left: 10px ;
     display: block;
+    max-width: 100%;
+    box-sizing: border-box;
 
 }
 .ucapan h1 {
@@ -64,12 +70,16 @@ body {
     flex-direction: column;
     margin: 10px;
     padding-right: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .qr-floating {
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .info-box .nisn {
     color: #bba10d;
@@ -87,6 +97,8 @@ body {
 .kolom {
     flex-direction: column;
     font-weight: bold;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .info-box .keterangan {
     color: #bba10d;
@@ -104,6 +116,8 @@ body {
     font-size: 25;
     font-weight: bold;
     text-transform: uppercase;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .nama-qr {
     display: flex;
@@ -111,4 +125,18 @@ body {
     justify-content: flex-start;
     gap: 12px;
     margin: 10px 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 480px) {
+    .qr-floating img {
+    width: 60px;
+    height: 60px;
+    }
+    .nama {
+        font-size: 1.5rem;
+    }
+    .info-box {
+        padding: 16px 16px 16px 16px;
+    }
 }

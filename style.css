@@ -27,7 +27,8 @@ header {
     background: linear-gradient(to right, #d2c984, #cfcc84, #d6d3bf);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 20px;
     border-radius:8 8 0 0;
     display: flex;
@@ -46,12 +47,13 @@ header {
     margin: 0;
 }
 .card {
+    max-width: 100%;
+    box-sizing: border-box;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 8px;
     padding: 0;
     max-width: 750px;
     max-height: 600px;
-    width: 90%;
     box-shadow: 0 4px 30px rgba(0,0,0,0.5);
     color: white;
     margin: 0;
@@ -93,16 +95,22 @@ input ::placeholder {
 .tanggal-wrapper {
     display: flex;
     gap: 2px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .tanggal-wrapper input {
     flex: 1;
     text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .slash {
     padding: 15px;
     color: #ccc;
     line-height: 40px;
     font-size: 40;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 button {
     background-color: #0288d1;

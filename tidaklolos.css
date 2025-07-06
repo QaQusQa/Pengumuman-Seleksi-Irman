@@ -20,6 +20,8 @@ body {
     width: 90%;
     margin: 0;
     overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .header-content {
     background: linear-gradient(to right, #989898, #b1b1b1, #d6d4d4);
@@ -31,6 +33,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .ucapan {
     color: #fff;
@@ -38,6 +42,8 @@ body {
     text-align: left;
     margin-left: 10px ;
     display: block;
+    max-width: 100%;
+    box-sizing: border-box;
 
 }
 .ucapan h1 {
@@ -62,6 +68,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .info-box .nisn {
@@ -80,6 +88,8 @@ body {
 .kolom {
     flex-direction: column;
     font-weight: bold;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .info-box .keterangan {
     color: #bba10d;
