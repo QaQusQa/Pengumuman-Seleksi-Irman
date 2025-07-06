@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengumuman Seleksi IRMAN 2025</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <header>
-    </header>
         <div class="card">
-            <div class="header-card">
-                <img src="LOGO IRMAN PDF_page-0001.jpg" alt="LOGO IRMAN" class="logo">
+            <div class="header-content">
+                <img src="IMG_2290.PNG" alt="LOGO IRMAN">
                 <h1>HASIL SELEKSI IRMAN 2025</h1>
             </div>
+
             <div class="form-group">
-                <label for="nisn">Nomor Registrasi Irman</label>
-                <input type="text" id="nisn" maxlength="10" placeholder="Nomor Registrasi Irman yang dibagikan" oninput="autoNext(this, 'tanggal')" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <label for="nisn">Nomor Registrasi Irman (NIR)</label>
+                <input type="text" id="nisn" maxlength="9" placeholder="Nomor Registrasi Irman yang dibagikan" oninput="autoNext(this, 'tanggal-hari')" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
             <div class="form-group">
-                <label for="tanggal">Tanggal Lahir</label>
-                <input type="date" id="tanggal" onkeydown="cekEnter(event, 'submit')">
+                <label for="tanggal">Tanggal Lahir (dd-mm-yyyy)</label>
+                <div class="tanggal-wrapper">
+                    <input type="text" id="tanggal-hari" maxlength="2" placeholder="Tanggal" oninput="nextTanggal(this, 'tanggal-bulan')">
+                    <span class="slash">/</span>
+                    <input type="text" id="tanggal-bulan" maxlength="2" placeholder="Bulan" oninput="nextTanggal(this, 'tanggal-tahun')">
+                    <span class="slash">/</span>
+                    <input type="text" id="tanggal-tahun" maxlength="4" placeholder="Tahun" onkeydown="cekEnter(event, 'submit')">
+                </div>
             </div>
             <button id="submit" onclick="cekHasil()">Lihat Hasil</button>
-            <div id="hasil" class="result" style="display:none;"></div>
         </div>
+        <script src="script.js"></script>
 </body>
 </html>
